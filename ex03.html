@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script src='jquery-3.6.0.min.js'></script>
+<script type="text/javascript">
+	$(function(){
+		$("button.add").click(function(){
+			$("h1, p, div").addClass("blue")	// button에 .add 클래스를 누르면 h1, p, div에 .blue가 적용됨
+		})
+		$(".remove").click(function(){
+			$("h1, p, div").removeClass("blue")	// button에 .remove 클래스를 누르면 h1, p, div에 .blue 클래스를 삭제함
+		})
+		$(".toggle").click(function(){
+			$("h1, p, div").toggleClass("border")	// button에 .toggle 클래스를 누르면 h1, p, div에 .border 클래스를 적용 한번 더누르면 삭제
+		})
+	})
+</script>
+
+<style type="text/css">
+	.blue { color: blue; }
+	.border { border: 2px solid red; }
+</style>
+
+</head>
+<body>
+
+	<h1>test</h1>	<p>test</p>		<div>test</div>
+	<button class="add">add</button>
+	<button class="remove">remove</button>
+	<button class="toggle">toggle</button>
+
+</body>
+</html>

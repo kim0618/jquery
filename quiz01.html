@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script src='jquery-3.6.0.min.js'></script>
+<script src='jquery-1.12.1-ui.js'></script>
+
+<style type="text/css">
+	.drag{ position: fixed; right:10px; top: 10px;
+		width: 150px; height: 100px; 
+		background-color: white; border-style: solid; text-align: center;
+	}
+	.remo { background-color: red;  text-align: center; cursor:default; }
+	.wrap { width: 950px; height: 400px; }
+	img { width: 30px; height: 30px; cursor:pointer;}
+	.btn { display: flex; margin-top:25px; margin-left:20px;  }
+	.btn1{ order:1; }
+	.font_size {  order:2; background-color: red; width:50px; height: 20px; text-align: center; margin-top:5px; }
+	.btn2{ order:3; }
+</style>
+
+<script type="text/javascript">
+	font=15;
+	$(function(){ 
+		$("#draggable").draggable();
+		
+		$("img.btn1").click(function(){
+			$("div.wrap").css({"font-size":font+=3 });
+			$("div.font_size").text(font);
+		});
+		
+		$("img.btn2").click(function(){
+			$("div.wrap").css({"font-size":font-=3 });
+			$("div.font_size").text(font);
+		});
+	});
+</script>
+
+</head>
+<body >
+<div class="wrap">
+	<h1>오늘의 소설</h1>
+	<h5>오늘 춥다</h5>
+	<h5>내일 춥다</h5>
+	<h5>모래 춥다</h5>
+</div>
+
+<div class="drag" id="draggable">
+		<div class="remo" style="height:20px;"><b>리 모 콘</b></div>
+		<div class="btn">
+			<img src="images/add.png" class="btn1">
+			<div class="font_size">15</div>		
+			<img src="images/sub.jpg" class="btn2">
+		</div>
+	</div>
+
+
+</body>
+</html>
